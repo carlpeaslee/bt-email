@@ -168,7 +168,10 @@ const btEmail = (ctx, done) => {
      html: createMessage(actor.handle),
      subject: "New Friend Request"
    }, (error, body) => {
-    console.log('error body', error, body)
+    if (error) {
+      console.log(error)
+    }
+    done()
   })
 
 
